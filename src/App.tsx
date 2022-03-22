@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState,useEffect} from 'react';
 import './App.css';
-
+import { Routes, Route, Link } from "react-router-dom";
+import FirstScreen from './Components/FirstScreen';
+import Second from './Components/Second';
 function App() {
+  const [input, setinput]=useState("");
+  const [data,setdata]=useState([]);
+  const [dis,setdis]=useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+      <Routes>
+      <Route path="/" element={ <FirstScreen name={input} fun={setinput} dis={dis} setdis={setdis}/>} />
+        <Route path="/Second" element={<Second input={input} />} />
+       {/* <Route path="*" element={<No />} />*/}
+      </Routes>
+      {data.map((res)=>{
+        return <h1>{}</h1>
+      })}
+    
     </div>
   );
 }
