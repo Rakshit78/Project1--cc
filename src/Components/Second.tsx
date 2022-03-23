@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import Third from '../Components/Third'
+import Third from './Third'
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router';
 import CircularProgress from '@mui/material/CircularProgress'
 type Props = {
-  input: string
+  input: string,
+  navigate:any
 }
 export default function Second(props: Props) {
   const [list, setlist] = useState([]);
@@ -25,11 +25,10 @@ export default function Second(props: Props) {
    getdata();
  
   }, [])
-  const navigate = useNavigate()
   return (
     <div style={{"width":"100vw", "height":"100vh","display":"grid","placeItems":"center"}}>
       {loading?<CircularProgress/>:<div style={{"background":"#e5e5e5","width":"400px","height":"450px","padding":"10px"}}>
-      <Button variant="contained" style={{  }} onClick={()=>navigate("/")}>Back</Button>
+      <Button variant="contained" style={{  }} onClick={()=>props.navigate("/")}>Back</Button>
       {list.map(({ capital, population, latlng, flag, flags:{png} }) => {
         return <div key={capital}>
           <p>Capital: {capital}</p>
