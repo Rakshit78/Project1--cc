@@ -15,11 +15,9 @@ function App() {
       <Routes>
       <Route path="/" element={ <FirstScreen name={input} fun={setinput} dis={dis} setdis={setdis} navigate={navigate}/>} />
         <Route path="/Second" element={<Second input={input} navigate={navigate}/>} />
-       {/* <Route path="*" element={<No />} />*/}
+       
       </Routes>
-      {data.map((res)=>{
-        return <h1>{}</h1>
-      })}
+    
     
     </div>
   );

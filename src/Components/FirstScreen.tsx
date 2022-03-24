@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-//import {useNavigate} from 'react-router-dom'
+
 type Props={
     name:string,
     fun:any,
@@ -10,7 +10,7 @@ type Props={
 }
 export default function FirstScreen(props:Props):any
 {
-    //const navigate = useNavigate()
+    
     return <div style={{"width":"100vw","height":"100vh","display":"grid","placeItems":"center"}}>
     <form onSubmit={(e)=>{
         e.preventDefault();
